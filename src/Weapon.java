@@ -7,8 +7,6 @@ public class Weapon {
     public Weapon() {
         super();
     }
-
-
     public Weapon( int damageOutput, int price, int durability, String projectileType) {
         super();
         this.damageOutput = damageOutput;
@@ -16,10 +14,13 @@ public class Weapon {
         this.durability = durability;
         this.projectileType = projectileType;
     }
-
-    public void stats() {
-        System.out.println("Weapon stats:\n" + "Damage output: "+ damageOutput+ "\n" + "Price: " + price + "\n" + "Durability: " + durability + "\n" + "Projectile type: " + projectileType);
+    public Weapon(int damageOutput, int price, int durability){
+        this(damageOutput, price, durability, "Armor Piercing");
     }
+
+//    public void stats() {
+//        System.out.println("Weapon stats:\n" + "Damage output: "+ damageOutput+ "\n" + "Price: " + price + "\n" + "Durability: " + durability + "\n" + "Projectile type: " + projectileType);
+//    }
 
     public void setDamageOutput(int damageOutput) {
         this.damageOutput = damageOutput;
@@ -44,5 +45,13 @@ public class Weapon {
     }
     public String getProjectileType(){
         return projectileType;
+    }
+    @Override
+    public String toString(){
+        return "Weapon stats:\n" +
+                "Damage output: "+ this.getDamageOutput()+ "\n" +
+                "Price: " + this.getPrice() + "\n" +
+                "Durability: " + this.getDurability() + "\n" +
+                "Projectile type: " + this.getProjectileType();
     }
 }

@@ -8,9 +8,11 @@ public class Runner {
         w1.setProjectileType("Slug");
 
         Weapon w2 = new Weapon(200, 250, 150, "Slug");
-        Weapon w3 = new Weapon(100, 150, 25, "Buckshot");
+        Weapon w3 = new Weapon(100, 150, 25);
 
-        w2.stats();
-        w3.stats();
+
+        System.out.println(w2.toString());
+        System.out.println(w3.toString());
+
     }
 }
