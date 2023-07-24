@@ -1,3 +1,4 @@
+package Classes;
 
 public class Runner {
     public static void main(String[] args) {
@@ -7,12 +8,13 @@ public class Runner {
         w1.setDurability(99);
         w1.setProjectileType("Slug");
 
-        Weapon w2 = new Weapon(200, 250, 150, "Slug");
+        Weapon w2 = new Weapon(200, 250, 150, "Buckshot");
         Weapon w3 = new Weapon(100, 150, 25);
 
 
-        System.out.println(w2.toString());
-        System.out.println(w3.toString());
+        System.out.println(w1);
+        System.out.println(w2);
+        System.out.println(w3);
 
     }
 }

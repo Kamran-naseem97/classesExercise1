@@ -1,3 +1,5 @@
+package Classes;
+
 public class Weapon {
     int damageOutput;
     int price;
@@ -19,7 +21,7 @@ public class Weapon {
     }
 
 //    public void stats() {
-//        System.out.println("Weapon stats:\n" + "Damage output: "+ damageOutput+ "\n" + "Price: " + price + "\n" + "Durability: " + durability + "\n" + "Projectile type: " + projectileType);
+//        System.out.println("Classes.Weapon stats:\n" + "Damage output: "+ damageOutput+ "\n" + "Price: " + price + "\n" + "Durability: " + durability + "\n" + "Projectile type: " + projectileType);
 //    }
 
     public void setDamageOutput(int damageOutput) {
@@ -34,6 +36,7 @@ public class Weapon {
     public void setProjectileType(String projectileType) {
         this.projectileType = projectileType;
     }
+
     public int getDamageOutput(){
         return damageOutput;
     }
@@ -46,9 +49,10 @@ public class Weapon {
     public String getProjectileType(){
         return projectileType;
     }
+
     @Override
     public String toString(){
-        return "Weapon stats:\n" +
+        return "Classes.Weapon stats:" +
                 "Damage output: "+ this.getDamageOutput()+ "\n" +
                 "Price: " + this.getPrice() + "\n" +
                 "Durability: " + this.getDurability() + "\n" +
