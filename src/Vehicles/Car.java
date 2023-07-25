@@ -1,18 +1,16 @@
 package Vehicles;
 
-import java.util.UUID;
-
 public class Car extends Vehicle {
     private int bootSize;
     private int noOfDoors;
     private String type;
 
     public Car(){
-        super(String.valueOf(UUID.randomUUID()),4, 5, 380, false, "Toyota", "Supra", "Petrol", "White", "Car");
+        super(1,4, 5, 380, false, "Toyota", "Supra", "Petrol", "White", "Car");
         this.type = "Car";
     }
 
-    public Car(String ID, int noOfWheels, int noOfSeats, int enginePower, boolean electric, String make, String model, String fuelType, String colour, int bootSize, int noOfDoors, String type) {
+    public Car(int ID, int noOfWheels, int noOfSeats, int enginePower, boolean electric, String make, String model, String fuelType, String colour, int bootSize, int noOfDoors, String type) {
         super(ID, noOfWheels, noOfSeats, enginePower, electric, make, model, fuelType, colour, type);
         this.bootSize = bootSize;
         this.noOfDoors = noOfDoors;
@@ -48,8 +46,14 @@ public class Car extends Vehicle {
     }
 
     @Override
+    public void startup() {
+        System.out.println("Vroom");
+    }
+
+    @Override
     public String toString() {
         return "Car{" +
+                super.toString() +
                 "bootSize=" + bootSize +
                 ", noOfDoors=" + noOfDoors +
                 ", type='" + type + '\'' +

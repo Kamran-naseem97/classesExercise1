@@ -1,7 +1,5 @@
 package Vehicles;
 
-import java.util.UUID;
-
 public class Truck extends Vehicle{
     private int noOfDoors;
     private int deliverySize;
@@ -9,10 +7,10 @@ public class Truck extends Vehicle{
     private String type;
 
     public Truck(){
-        super(String.valueOf(UUID.randomUUID()),2, 2, 500, false, "Mercedes", "TruckityTruck", "Diesel", "Red", "Truck");
+        super(3,2, 2, 500, false, "Mercedes", "TruckityTruck", "Diesel", "Red", "Truck");
     }
 
-    public Truck(String ID, int noOfWheels, int noOfSeats, int enginePower, boolean electric, String make, String model, String fuelType, String colour, int noOfDoors, int deliverySize, boolean trailerAttached, String type) {
+    public Truck(int ID, int noOfWheels, int noOfSeats, int enginePower, boolean electric, String make, String model, String fuelType, String colour, int noOfDoors, int deliverySize, boolean trailerAttached, String type) {
         super(ID, noOfWheels, noOfSeats, enginePower, electric, make, model, fuelType, colour, type);
         this.noOfDoors = noOfDoors;
         this.deliverySize = deliverySize;
@@ -57,8 +55,14 @@ public class Truck extends Vehicle{
     }
 
     @Override
+    public void startup() {
+        System.out.println("Big Vroom");
+    }
+
+    @Override
     public String toString() {
         return "Truck{" +
+                "ID= " + getID()+
                 "noOfDoors=" + noOfDoors +
                 ", deliverySize=" + deliverySize +
                 ", trailerAttached=" + trailerAttached +

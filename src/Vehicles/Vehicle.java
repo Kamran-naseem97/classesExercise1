@@ -1,9 +1,8 @@
 package Vehicles;
 
-import java.util.UUID;
-
-public class Vehicle {
-    private String ID;
+abstract class Vehicle implements Comparable<Vehicle> {
+    private String name;
+    private int ID;
     private int noOfWheels;
     private int noOfSeats;
     private int enginePower;
@@ -14,11 +13,12 @@ public class Vehicle {
     private String colour;
     private String type;
 
+    public abstract void startup();
     public Vehicle(){
         super();
     }
-    public Vehicle(String ID, int noOfWheels, int noOfSeats, int enginePower, boolean electric, String make, String model, String fuelType, String colour, String type){
-        this.ID = String.valueOf(UUID.randomUUID());
+    public Vehicle(int ID, int noOfWheels, int noOfSeats, int enginePower, boolean electric, String make, String model, String fuelType, String colour, String type){
+        this.ID = ID;
         this.noOfWheels = noOfWheels;
         this.noOfSeats = noOfSeats;
         this.enginePower = enginePower;
@@ -100,11 +100,11 @@ public class Vehicle {
         this.colour = colour;
     }
 
-    public String getID() {
+    public int getID() {
         return ID;
     }
 
-    public void setID(String ID) {
+    public void setID(int ID) {
         this.ID = ID;
     }
 
@@ -116,10 +116,20 @@ public class Vehicle {
         this.type = type;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    @Override
+    public int compareTo(Vehicle o) {
+        return o.ID - this.ID;
+    }
+
     @Override
     public String toString() {
-        return "Vehicle{" +
-                "ID='" + ID + '\'' +
+        return
+                "name='" + name + '\'' +
+                ", ID=" + ID +
                 ", noOfWheels=" + noOfWheels +
                 ", noOfSeats=" + noOfSeats +
                 ", enginePower=" + enginePower +
@@ -128,7 +138,7 @@ public class Vehicle {
                 ", model='" + model + '\'' +
                 ", fuelType='" + fuelType + '\'' +
                 ", colour='" + colour + '\'' +
-                ", type='" + type + '\'' +
-                '}';
+                ", type='" + type + '\''
+                ;
     }
 }
